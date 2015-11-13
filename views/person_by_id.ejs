@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Add description ">
+        <title>Person By ID</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript">
+        	 $(document).ready(function(){
+
+        	
+
+        	});
+
+
+
+		</script>
+	</head>
+
+
+		<body>
+			<h1> <a href="/">Teams</a>  |  <a href="/persons">Students</a> </h1>
+        	<hr> 
+			<%= person[0].name %>
+			<p> Currently a member of: 
+				<% for (var y in groups)
+				{ 
+					if (groups[y].id == person[0]._group)
+					{ %>
+						<%= groups[y].name %>
+				<% }
+
+				} %>
+				</p>
+			
+			<form method="post" action="/assign_to_group/<%= person[0]._id %>">
+				<select name ="group">
+				<% for (x in groups) {%>
+				<option value ="<%= groups[x]._id %>"><%= groups[x].name %> </option>
+				<%} %>
+				</select>
+				<input type="submit" value="Assign">	
+			</form>
+
+			<a href="/unassociate/<%= person[0]._id %>"><button>Clear Associations</button></a>
+	
+		</body>
+
+</html>

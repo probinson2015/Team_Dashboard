@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Add description ">
+        <title>View Group</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+        </script>
+        <script type="text/javascript">
+        	 $(document).ready(function(){
+
+        	});
+
+		</script>
+	</head>
+
+		<body>
+      <h1> <a href="/">Teams</a>  |  <a href="/persons">Students</a> </h1>
+      <hr> 
+			<h2> <%= group[0].name %></h2>
+      <% for(x in persons){ %>
+          <a href="/person_by_id/<%=persons[x]._id %>"><p><%= persons[x].name %></p></a>
+    <% } %>
+			
+	
+		</body>
+
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <meta name="description" content="Add description ">
+        <title>Persons</title>
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+        <script type="text/javascript">
+        	 $(document).ready(function(){
+
+        	
+
+        	});
+
+
+
+		</script>
+	</head>
+
+
+		<body>
+        <h1> <a href="/">Teams</a>  |  <a href="/persons">Students</a> </h1>
+        
+			<form action = "/add_person" method="post">
+			Name: <input type = "text" name = "name">
+			<input type="submit" value="Add">
+			</form>
+
+			<% for (x in persons) { %>
+			 <h3><a href="/person_by_id/<%= persons[x]._id %>"><%= persons[x].name %></a> </h3>
+                <a href="/destroy_person/<%= persons[x]._id%>">Delete this person</a>
+
+
+			<%}%>
+	
+		</body>
+
+</html>

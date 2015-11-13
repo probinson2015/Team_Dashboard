@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="utf-8"/>
+    <meta name="description" content="Add description ">
+    <title>Team Dashboard</title>
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+ 
+    
+    <script type="text/javascript">
+        $(document).ready(function(){
+
+     
+        });
+    </script>
+        <style>
+        input {    
+            height:15px;
+        }
+        .wrapper {    
+        width: 800px;
+        display:inline-block;
+        margin: auto;
+        }
+        form {
+            display: inline-block;
+        }
+        #post {
+            height: 80px;
+            width: 400px;
+            display: block;
+        }
+        #comment {
+            height: 60px;
+            width: 400px;
+            display: block;
+        }
+        #comment_button, #post_message {
+            float: right;
+        }
+
+        </style>
+    </head>
+
+    <body>
+        <h1> <a href="/">Teams</a>  |  <a href="/persons">Students</a> </h1>
+        <hr>       
+        <div class="wrapper">
+            
+            <form class="form"action="/add_group" method="post">
+              Add Team: <p> <input type='text' name='name'></p>
+                <input type='submit' value='Add Team!'>
+            </form>
+            <br>
+        
+            <% for (x in groups) { %>
+                <h3><a href="/group_by_id/<%= groups[x]._id %>"><%= groups[x].name %></a> </h3>
+                <a href="/destroy_group/<%= groups[x]._id%>">Delete this Group</a>
+          
+            <% } %>
+      
+    
+            
+        </div>
+    </body>
+
+</html>
